@@ -1,0 +1,461 @@
+label {
+  @include des;
+  color: $dark;
+  font-weight: $semibold;
+}
+
+.custom-select {
+  background-color: $white;
+  height: calc(1em + 1.25rem + 3px);
+  font-size: 0.875rem;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.custom-control-label {
+  color: $gray-800;
+
+  &::before {
+    top: 0.2rem;
+    left: -1.1rem;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $gray-500;
+  }
+
+  &::after {
+    top: 0.3rem;
+    left: -1rem;
+    width: 8px;
+    height: 8px;
+    background: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.form {
+  &-control::-webkit-input-placeholder {
+    color: $gray-300;
+  }
+
+  &--upload {
+    display: flex;
+    align-items: center;
+
+    label {
+      margin-bottom: 0;
+    }
+
+    .form-control {
+      margin-right: 0.5rem;
+      @include des;
+
+      &[readonly] {
+        background: #fff;
+      }
+    }
+
+    &__cover {
+      background-color: $body-bg;
+      border-radius: 4px;
+
+      label {
+        color: $gray-100;
+
+        .upload {
+          &--title {
+            color: $gray-800;
+            margin-bottom: 3em;
+          }
+
+          &--info {
+            font-style: italic;
+            font-weight: 400;
+            margin-top: 3.5em;
+            color: $gray-100;
+
+            i {
+              @include rfs(12px);
+            }
+          }
+        }
+      }
+    }
+
+    &--text {
+      color: $secondary;
+      font-weight: 400;
+      @include des;
+    }
+  }
+
+  &--button {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.input-group-addon {
+  padding: .6125rem;
+  @include des;
+  color: $gray-800;
+  margin: auto;
+  background-color: $gray-700;
+  border: 1px solid $gray-300;
+  border-radius: 4px;
+}
+.error {
+  @include small;
+  color: $red;
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+
+  i {
+    display: inline-block;
+    margin-right: 0.25rem;
+  }
+}
+
+.info {
+  @include small;
+  color: $info;
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+
+  i {
+    display: inline-block;
+    margin-right: 0.25rem;
+  }
+}
+
+.asterisk {
+  color: $red;
+  @include h5;
+  margin-left: 0.25rem;
+}
+
+.files {
+  &--upload {
+    position: relative;
+    border: 1px dashed $gray-500;
+    // padding: 1.5rem  0;
+    height: 230px;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 1rem;
+    }
+
+    .imagePlaceholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: white;
+      width: 100%;
+      height: 100%;
+
+      pointer-events: visible;
+      display: none;
+
+      &:before {
+        content: "\e948";
+        font-family: "icomoon" !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0);
+        font-size: 32px;
+        color: $blue;
+        opacity: 0;
+        transition: 0.2s ease-in opacity, 0.2s ease-in transform;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      &:hover {
+        filter: brightness(0.8);
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .imagePlaceholder {
+        &:before {
+          transform: translate(-50%, -50%) rotate(360deg);
+          opacity: 1;
+        }
+      }
+    }
+
+    label {
+      height: 100%;
+      color: $gray-800;
+      @include des;
+      border-radius: 4px;
+
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        color: $info;
+      }
+    }
+
+    &__cover {
+      background-color: $body-bg;
+      border-radius: 4px;
+
+      label {
+        color: $gray-100;
+        cursor: pointer;
+
+        .upload {
+          &--title {
+            color: $gray-800;
+            margin-bottom: 3rem;
+          }
+
+          &--info {
+            font-style: italic;
+            font-weight: 400;
+            margin-top: 3.5rem;
+            color: $gray-100;
+
+            i {
+              @include rfs(12px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.upload-doc {
+  display: flex;
+  flex-shrink: 0;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+}
+
+// Login page
+.login {
+  padding: 2.5rem 0;
+  min-height: 500px;
+
+  &--wrapper {
+    background-color: map-get($login, backgroundColor);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .row {
+      height: 100%;
+    }
+  }
+
+  &--logo {
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-bottom: 3rem;
+  }
+}
+
+// .link{
+//   &--action{
+//     display: flex;
+//     align-items: center;
+//     @include rfs(map-get($font-sizes,p));
+//     font-weight: 600;
+//     span{
+//       margin-right: .5rem;
+//     }
+
+//     &:hover{
+//       cursor: pointer;
+//     }
+//   }
+// }
+
+// .custom--collapse{
+//   position: absolute;
+//     z-index: 1;
+//     background: white;
+//     box-shadow: 0 2px 4px rgba(0,0,0,.08);
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+//     width: 98px;
+//     border-radius: 4px;
+//     li{
+//       padding:.25rem .75rem;
+//       a{
+//         font-weight: 600;
+//         color: #B3B3B3;
+//       }
+//       &.active{
+//         background-color:#F8F8FB;
+//         a{
+//           color: #3A36A0;
+//         }
+//       }
+//     }
+// }
+
+// .documents{
+//   list-style-type: none;
+//   padding: 0;
+//   margin: 0;
+
+//   li{
+//     display: flex;
+//     align-items: flex-start;
+//     &:not(:last-child){
+//       margin-bottom: .5rem;
+//     }
+
+//     .icon{
+//       font-size: 24px;
+//       color: $input-info-color;
+//       margin-right: .5rem;
+//     }
+
+//     .text{
+//       h6{
+//         font-weight: 600;
+//         color: $yellow;
+//         line-height: 9px;
+//       }
+//       small{
+//         color: $gray-900;
+//       }
+//     }
+//   }
+// }
+
+.custom-control-inline {
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 0.25rem;
+  }
+}
+ 
+.custom {
+  &--checkbox {
+    label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      @include des;
+      color: $gray-100;
+      font-weight: 400;
+
+      &:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        border: 1px solid $secondary;
+        background-color: transparent;
+        display: block;
+        flex-shrink: 0;
+        margin-right: 1rem;
+      }
+    }
+
+    input {
+      padding: 0;
+      height: initial;
+      width: initial;
+      margin-bottom: 0;
+      display: none;
+
+      &[checked="true"] {
+        label:before {
+          background-color: $info;
+          border: 1px solid $info;
+        }
+      }
+
+      &:checked + label:before {
+        background-color: $info;
+        border: 1px solid $info;
+      }
+    }
+  }
+  &-radio {
+    label {
+      font-weight: $regular;
+    }
+  }
+
+  &--radio {
+    label {
+      display: flex;
+      align-items: baseline;
+      color: $gray-800;
+      font-weight: 400;
+      line-height: 1.75;
+      &:before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        display: block;
+        border-radius: 50%;
+        border: 1px solid $gray-800;
+        margin-right: 0.75rem;
+        flex-shrink: 0;
+      }
+    }
+
+    input[checked="true"] {
+      & + label:before {
+        background-color: $info;
+        border: 1px solid $info;
+      }
+    }
+
+    input[type="radio"] {
+      display: none;
+      &:checked + label:before {
+        background-color: $info;
+        border: 1px solid $info;
+      }
+    }
+  }
+}
+
+.file-placeholder {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border: 1px dotted $gray-500;
+  margin-bottom: 1.5rem;
+  background-color: $gray-300;
+}
+.extra-doc {
+  margin-right: 0.5rem;
+  @include media-breakpoint-down(sm) {
+    margin-right: 0;
+  }
+}

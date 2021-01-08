@@ -1,0 +1,81 @@
+body {
+  line-height: 1.3;
+  margin: 0 auto;
+
+  font-family: $typeface1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+@mixin h1 {
+  @include rfs(2.488rem); //39.81px
+}
+@mixin h2 {
+  @include rfs(2.074rem); //33.18px
+}
+@mixin h3 {
+  @include rfs(1.728rem); //27.65px
+}
+@mixin h4 {
+  @include rfs(1.44rem); //23.04px
+}
+@mixin h5 {
+  @include rfs(1.2rem); //19.20px
+}
+@mixin h6 {
+  @include rfs(2.488rem); //39.81px
+}
+@mixin des {
+  @include rfs(0.833rem); //13.33px
+}
+@mixin small {
+  @include rfs(0.694rem); //11.11px
+}
+
+h1,
+.h1 {
+  @include rfs(2.488rem); //39.81px
+}
+h2,
+.h2 {
+  @include rfs(2.074rem); //33.18px
+}
+h3,
+.h3 {
+  @include rfs(1.728rem); //27.65px
+}
+h4,
+.h4 {
+  @include rfs(1.44rem); //23.04px
+}
+h5,
+.h5 {
+  @include rfs(1.2rem); //19.20px
+}
+h6,
+.h6 {
+  @include rfs(1rem); //16px
+}
+p,
+.des {
+  @include rfs(0.833rem); //13.33px
+}
+small,
+.small {
+  @include rfs(0.694rem); //11.11px
+}
+// Font weight
+.font-regular {
+  font-weight: 400;
+}
+.font-semibold {
+  font-weight: 600;
+}

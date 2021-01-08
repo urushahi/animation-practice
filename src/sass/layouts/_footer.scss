@@ -1,0 +1,90 @@
+.footer {
+  padding-top: 2.75rem;
+  @include rfs(14);
+  font-weight: $regular;
+  background-color: $blue;
+  color: $white;
+  @include media-breakpoint-down(sm) {
+    padding: 1.75rem 0;
+  }
+  .navbar-brand {
+    height: 45px;
+    padding: 0;
+    // margin: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  label {
+    margin: 0;
+    color: $white;
+    @include rfs(14);
+  }
+  &--title {
+    //  margin-bottom: 1.5rem;
+    @include rfs(20);
+    //  color: $primary;
+    font-weight: $bold;
+    //  @include media-breakpoint-down(md){
+    //     margin: 1rem 0;
+    // }
+  }
+  &--links {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    @include media-breakpoint-down(sm) {
+      margin: 1.5rem 0;
+    }
+    li {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      span {
+        line-height: 1.375;
+      }
+    }
+  }
+  &--contact {
+    list-style: none;
+    padding: 0;
+    li {
+      &:not(:last-child) {
+        margin-bottom: 0.625rem;
+      }
+      span {
+        line-height: 1.375rem;
+      }
+    }
+  }
+  &--bottom {
+    @include rfs(14);
+    padding: 1rem;
+    background-color: $dark;
+    color: $white;
+    border-top: 1px solid rgba($gray-100, 0.16);
+    @include media-breakpoint-down(phone) {
+      margin-top: 0;
+    }
+  }
+  &--date {
+    @include respond(phone) {
+      margin-bottom: 0.5rem;
+    }
+    .rights {
+      @include media-breakpoint-down(nm) {
+        &::before {
+          content: "";
+          display: block;
+          white-space: pre;
+        }
+      }
+    }
+  }
+  &--social {
+    display: flex;
+    margin: 1rem 0;
+  }
+}

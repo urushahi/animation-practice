@@ -1,0 +1,13 @@
+ 
+ .social-wrapper{
+     background-color: $gray-600;
+     border-radius: 1rem;
+     width: 1.5rem;
+     height: 1.5rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .social-wrapper:hover{
+     background-color: $primary;
+ }

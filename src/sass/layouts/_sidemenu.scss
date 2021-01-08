@@ -1,0 +1,37 @@
+ // Sidemenu
+
+.sidemenu-list {
+    list-style: none;
+    padding: 0;
+
+    font-weight: $semibold;
+    color: $dark;
+  
+    li {
+      padding: 0.75em 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $gray-700;
+      a {
+        display: block;
+        @include des;
+      }
+  
+      &.active {
+        color: $blue;
+        position: relative;
+        @include rfs(16);
+  
+        &:after {
+          // content: url('../img/svg/active-menu-pointer.svg');
+          font-family: 'icomoon';
+          position: absolute;
+          right: 0;
+          top: 50%;
+  
+          transform: translate(0, -50%);
+  
+        }
+      }
+    }
+  }

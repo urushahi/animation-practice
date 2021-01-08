@@ -1,0 +1,11 @@
+.fit-contain{
+  object-fit: contain!important;
+}
+
+#myBar {
+  background-color: $blue;
+}
+
+.lists{
+  @include list-unstyled;
+}

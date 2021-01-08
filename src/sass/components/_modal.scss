@@ -1,0 +1,101 @@
+.modal {
+  &-header {
+    align-items: center;
+  }
+  &-body {
+    padding: 1rem 0 2rem 0;
+    .id {
+      width: calc(153.36px * 2);
+      height: calc(242.64px * 2);
+      margin: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba($black, 0.08);
+
+      &--user {
+        height: 80px;
+        width: 80px;
+        margin: auto;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 3px solid white;
+        }
+      }
+
+      &--org {
+        background-color: $blue-100;
+
+        img {
+          padding: 1rem;
+        }
+
+        .shape {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .triangle {
+            width: 128px;
+            height: 3px;
+            background-color: white;
+            margin-top: 0.5rem;
+            &-left {
+              transform: rotate(12deg);
+            }
+            &-right {
+              transform: rotate(-12deg);
+            }
+          }
+        }
+      }
+
+      &--qr {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .content {
+        padding: 0 1rem 1rem;
+        background-color: $blue-100;
+        .title {
+          h6 {
+            font-weight: 800;
+            color: $blue;
+            margin: 0.5rem 0;
+            &.name {
+              @include des;
+              font-weight: 700;
+            }
+          }
+        }
+
+        ul {
+          margin-top: 0.5rem;
+          padding: 0;
+          list-style: none;
+          li {
+            column-count: 2;
+            margin-bottom: 0.5rem;
+
+            h6 {
+              @include des;
+              color: $blue;
+              font-weight: 600;
+              text-align: right;
+            }
+            p {
+              color: $gray-100;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

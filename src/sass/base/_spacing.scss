@@ -1,0 +1,62 @@
+$base: 1em;
+
+$direction: (
+  t: top,
+  b: bottom,
+  l: left,
+  r: right,
+  x: null,
+  y: null
+);
+//add custom spacing you want to create
+$spacing: (
+  2: 32,
+ 
+  3: 64
+);
+
+@mixin set-spacing($initial, $dir, $key, $em) {
+  .m#{$initial}--#{$key} {
+    margin-#{$dir}: #{$em}em;
+  }
+  .p#{$initial}--#{$key} {
+    padding-#{$dir}: #{$em}em;
+  }
+}
+@mixin set-spacingX($initial, $key, $em) {
+  .m#{$initial}--#{$key} {
+    margin: 0 #{$em}em;
+  }
+  .p#{$initial}--#{$key} {
+    padding: 0 #{$em}em;
+  }
+}
+@mixin set-spacingY($initial, $key, $em) {
+  .m#{$initial}--#{$key} {
+    margin: #{$em}em 0;
+  }
+  .p#{$initial}--#{$key} {
+    padding: #{$em}em 0;
+  }
+}
+
+@mixin spacing($initial, $dir, $key, $em) {
+  @if ($dir!=null) {
+    @include set-spacing($initial, $dir, $key, $em);
+  } @else {
+    @if ($initial==x) {
+      @include set-spacingX($initial, $key, $em);
+    }
+    @if ($initial==y) {
+      @include set-spacingY($initial, $key, $em);
+    }
+  }
+}
+
+@each $key, $space in $spacing {
+  $em: $space / 16;
+
+  @each $initial, $dir in $direction {
+    @include spacing($initial, $dir, $key, $em);
+  }
+}

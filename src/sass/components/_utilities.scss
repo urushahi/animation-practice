@@ -1,0 +1,281 @@
+%header-overlay {
+  background-color: rgba($secondary, $alpha: 0.37);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.secondary--heading {
+  @include des;
+  color: map-get($table, headingColor);
+  margin-bottom: 1.5rem;
+}
+
+.calendar {
+  display: flex;
+  &--date {
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    background-color: $message-background;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+      @include media-breakpoint-down(sm) {
+        margin-right: 0;
+      }
+    }
+
+    &.active {
+      background-color: $primary;
+      border-radius: 0.25rem;
+      color: $gray-400;
+    }
+
+    h4 {
+      font-weight: bold;
+    }
+
+    span {
+      @include des;
+    }
+  }
+}
+
+.objective {
+  &--list {
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    span {
+      color: $primary;
+      @include des;
+    }
+
+    p {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.press {
+  &--section {
+    padding-bottom: 2rem;
+
+    span {
+      color: $gray-100;
+      @include des;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding: 0;
+      margin-top: 1.25rem;
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+.executive {
+  text-align: center;
+  color: $secondary;
+  margin-bottom: 1.25rem;
+
+  &--header {
+    @include h5;
+    color: $primary;
+    margin-top: 0.75rem;
+  }
+
+  &--title {
+    @include des;
+    margin-top: 0.25rem;
+  }
+
+  &--mail {
+    @include des;
+
+    &:hover {
+      color: $primary;
+      text-decoration: none;
+    }
+  }
+
+  &--image {
+    // position: relative;
+    display: flex;
+
+    @include respond(phone) {
+      width: 200px;
+      margin: auto;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      color: $white;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+    }
+
+    // &:hover {
+    //     &:after {
+    //         background-color: rgba($primary, 0.7);
+    //     }
+    //     .executive--mail {
+    //         display: block;
+    //     }
+    // }
+  }
+}
+
+.criteria--form {
+  .custom-control-inline {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    margin-left: 0.75rem;
+  }
+
+  .custom-control-label::before {
+    left: -1.75rem;
+  }
+}
+
+.gallery {
+  &--image {
+    display: inline-block;
+
+    img {
+      height: 240px;
+      object-fit: cover;
+    }
+  }
+
+  &--header {
+    margin: 1rem 0 1.5rem 0;
+
+    a {
+      display: block;
+      color: $primary;
+      @include rfs(16);
+      // margin-bottom: 0.25rem;
+    }
+
+    span {
+      color: $gray-100;
+      @include des;
+    }
+  }
+}
+
+.photo {
+  &--image {
+    display: inline-block;
+    margin: 0 1rem 1.5rem 0;
+    height: 150px;
+    width: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    // @include media-breakpoint-down(sm) {
+    //   // margin-right: 0;
+    // }
+  }
+}
+
+.textbox {
+  margin-bottom: 1rem;
+}
+
+.documents {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      font-size: 1.25rem;
+      color: $input-info-color;
+      margin-right: 0.5rem;
+    }
+
+    .text {
+      h6 {
+        font-weight: 600;
+        color: $orange;
+        line-height: 1rem;
+      }
+
+      small {
+        color: $gray-900;
+      }
+    }
+  }
+}
+.auth {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  @include media-breakpoint-down(md) {
+    padding-right: 0;
+  }
+
+  &-user {
+    color: white;
+    @include des;
+    font-weight: 600;
+    @include media-breakpoint-down(xs) {
+      display: none;
+    }
+  }
+
+  i,
+  svg {
+    color: black;
+    @include small;
+  }
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  &-md {
+    @extend .avatar;
+    width: 2rem;
+    height: 2rem;
+  }
+}

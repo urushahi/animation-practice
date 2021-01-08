@@ -1,0 +1,360 @@
+.navbar {
+  padding: 0;
+
+  &--small {
+    display: none;
+    width: 320px;
+    // transform: translateX(320px);
+    height: 100%;
+    position: absolute;
+    background-color: $white;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    transition: transform ease-in-out 0.3s;
+    h6 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $blue;
+      color: $white;
+      @include rfs(1.5rem);
+      font-weight: 800;
+      padding: 1.5rem;
+      span {
+        font-weight: 400;
+        @include rfs(1rem);
+      }
+    }
+    ul {
+      padding: 0;
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        color: $dark;
+        @include rfs(h6);
+        font-weight: 600;
+        font-family: $typeface2;
+        &:not(:last-child) {
+          border-bottom: 3px solid $gray-400;
+        }
+        a {
+          padding: 1rem 1.5rem;
+
+          // font-weight: 600;
+          // color: $white;
+          // @include rfs(0.875rem);
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .dropdown-toggler::after {
+      content: "\e902";
+      display: inline;
+      font-family: "icomoon";
+      position: absolute;
+      right: 1rem;
+    }
+
+    .dropdown-menu {
+      width: 97%;
+      margin-top: 0.25rem;
+      a {
+        padding: 0.875rem;
+        font-weight: 600;
+        @include rfs(1rem);
+        color: $dark !important;
+        &::before {
+          color: $dark !important;
+        }
+      }
+    }
+  }
+  &--home {
+    background-color: $blue;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+    }
+
+    // .navbar-brand {
+    //   height: 60px;
+    //   padding: 0;
+    //   // margin: 0;
+
+    img {
+      width: 50px;
+      object-fit: contain;
+      margin-left: 1em;
+      // position: absolute;
+    }
+
+    .navbar-nav {
+      align-items: center;
+      @include media-breakpoint-down(md) {
+        margin-top: 0.5rem;
+        align-items: flex-start;
+      }
+      @include media-breakpoint-down(sm) {
+        padding: 0 1rem;
+      }
+
+      .nav-item {
+        position: relative;
+        &:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+
+        @include media-breakpoint-down(md) {
+          // border-bottom: 1px solid rgba($gray-100, 0.3);
+          padding: 0.5rem 0;
+
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+
+        .nav-link {
+          @include des;
+          color: $white;
+          padding: 0;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &--login {
+    @include rfs(14);
+
+    @include media-breakpoint-down(md) {
+      margin-top: 0.5rem;
+    }
+
+    button {
+      background-color: $primary;
+      border-color: $primary;
+      margin-left: 1rem;
+      @include rfs(14);
+
+      @include media-breakpoint-down(md) {
+        display: block;
+        margin: 0.75rem 0 0 0;
+      }
+    }
+  }
+
+  &--help {
+    margin: 0 3rem 0 1rem;
+  }
+
+  &--contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      justify-content: space-between;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+    // @include media-breakpoint-down(xs) {
+    //   flex-direction: column;
+    // }
+    button {
+      @include media-breakpoint-down(sm) {
+        margin-left: auto;
+      }
+    }
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $blue;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      color: $white;
+      flex-shrink: 0;
+    }
+    h6 {
+      @include des;
+      color: $dark;
+      // @include media-breakpoint-down(sm) {
+      //   // color: $white;s
+      // }
+    }
+    a {
+      @include small;
+      color: $gray-100;
+      // @include media-breakpoint-down(sm) {
+      //   color: $white;
+      // }
+      @include hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#my-nav {
+  @include respond(md) {
+    // background-color: map-get($theme-colors, primary);
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// nav dropdown
+.dropdown {
+  &-menu {
+    border-left: 2px solid $primary;
+    margin-top: 1.25rem;
+    padding: 0;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    @include des;
+    padding: 0.5rem;
+    color: $blue !important;
+    &::before {
+      content: "\e905";
+      font-family: "icomoon";
+      font-size: 7px;
+      margin-right: 0.5rem;
+      color: $blue;
+    }
+    @include hover {
+      background-color: $primary;
+      color: white !important;
+
+      &::before {
+        color: white;
+      }
+    }
+  }
+
+  &-nested {
+    display: none;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    max-width: 10rem;
+    border-left: 2px solid $blue;
+    padding: 0;
+    min-width: 10rem;
+    li {
+      list-style: none;
+      a {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+  .caller {
+    // color: red;
+    &:hover .dropdown-nested {
+      text-decoration: none;
+      color: blue;
+      display: block;
+    }
+  }
+
+  &-accordion {
+  }
+}
+
+.navbar-brand {
+  padding: 0;
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+  }
+}
+
+//for nav icon
+.nav--icon1 {
+  width: 25px;
+  height: 25px;
+
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  @include media-breakpoint-down(lg) {
+    margin-right: 1em;
+  }
+}
+
+.nav--icon1 span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: $white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.nav--icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+.nav--icon1 span:nth-child(2) {
+  top: 9px;
+}
+
+.nav--icon1 span:nth-child(3) {
+  top: 18px;
+}
+
+.nav--icon1.open span:nth-child(1) {
+  top: 9px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.nav--icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.nav--icon1.open span:nth-child(3) {
+  top: 9px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}

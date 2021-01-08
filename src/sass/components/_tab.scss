@@ -1,0 +1,93 @@
+.registration {
+  &--header {
+    background-color: $white;
+  }
+
+  &--tab {
+    // img{
+    //     padding:map-get($register, px);
+    // }
+    .card {
+      border: none;
+    }
+    .nav-pills {
+      border-radius: map-get($register, radiusSize);
+      .nav-item {
+        .nav-link {
+          @include des;
+          color: $gray-500;
+          font-weight: 600;
+          // border-bottom: 2px solid transparent;
+          padding: 1rem;
+          &.active {
+            background-color: $white;
+            border-radius: map-get($register, radiusSize);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom: 2px solid map-get($register, blueColor);
+            color: map-get($register, blueColor);
+          }
+          &.visited {
+            color: $primary;
+            // background-color: $primary;
+            &:before {
+              content: "\e916";
+              font-family: icomoon;
+              font-size: 0.625rem;
+              width: 1.25rem;
+              height: 1.25rem;
+              display: inline-flex;
+              border: 1px solid $primary;
+              // text-align: center;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+    .tab-content {
+      margin-top: 1rem;
+    }
+  }
+}
+.heading {
+  &--form {
+    font-weight: 700;
+    color: map-get($register, blueColor);
+  }
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  @include des;
+}
+.list--multistep .nav-item .nav-link.active {
+  border-bottom: 2px solid map-get($register, blueColor);
+  color: map-get($register, blueColor);
+}
+.list--multistep .nav-item .nav-link.visited {
+  color: $primary;
+  // background-color: $primary;
+  &:before {
+    content: "\e916";
+    font-family: icomoon;
+    font-size: 0.625rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-flex;
+    border: 1px solid $primary;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+}
+.multistep {
+  display: none;
+}
