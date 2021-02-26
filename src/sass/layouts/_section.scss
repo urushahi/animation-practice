@@ -805,8 +805,22 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes linearMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
 .wheel {
-  animation: rotation 1800ms 1s linear;
+  animation: rotation 1s infinite linear;
   transform-box: fill-box;
   transform-origin:center center;
+}
+.rath{
+  animation: linearMove 6s linear;
+  // transform-box: fill-box;
+  // transform-origin:center center;
 }
