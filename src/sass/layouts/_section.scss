@@ -796,3 +796,17 @@
     opacity: 0.4;
   }
 }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.wheel {
+  animation: rotation 1800ms 1s linear;
+  transform-box: fill-box;
+  transform-origin:center center;
+}

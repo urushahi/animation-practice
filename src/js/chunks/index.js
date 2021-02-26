@@ -30,36 +30,27 @@ import "bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css";
 import "bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.min.css";
 
 
-$(".rath").click(function () {
+// $(".rath").click(function () {
 
-  anime({
-    targets: '.wheel',
-    rotate: "1turn",
-    loop: 4,
-    easing: 'easeInOutQuad',
-    width: '100%',
-  });
-  // // anime({
-  //   targets: '.name',
-  //   transform:'center',
-  //   rotate: "1turn",
-  //   // loop: true,
-  //   // backgroundColor: '#FFF',
-  //   easing: 'easeInOutQuad'
-  // });
-  // anime({
-  //   targets: '.rath',
-  //   translateX: 250,
-  //   loop: 4,
-  //   direction: 'alternate',
-  //   easing: 'easeInOutSine',
-  //   width: '100%',
-  // });
-  anime({
-    targets: '.rath',
-    rotate: "1turn",
-    loop: 4,
-    easing: 'easeInOutQuad',
-    width: '100%',
-  });
-})  
+//   anime({
+//     targets: '.wheel',
+//     rotate: "1turn",
+//     loop: 2,
+//     // easing: 'easeInOutQuad',
+//     width: '100%',
+//   });
+//   // // anime({
+//   //   targets: '.name',
+//   //   transform:'center',
+//   //   rotate: "1turn",
+//   //   // loop: true,
+//   //   // backgroundColor: '#FFF',
+//   //   easing: 'easeInOutQuad'
+//   // });
+//   anime({
+//     targets: '.rath',
+//     translateX: 250,
+//     easing: 'easeInOutSine',
+//     width: '100%',
+//   });
+// })  
