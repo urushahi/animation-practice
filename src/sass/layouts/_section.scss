@@ -815,7 +815,8 @@
   }
 }
 .wheel {
-  animation: rotation 1s infinite linear;
+  animation: rotation 1s 6 linear;
+  // animation-duration: 6s;
   transform-box: fill-box;
   transform-origin:center center;
 }
